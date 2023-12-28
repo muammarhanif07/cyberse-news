@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="red">#DB092C</color>
+    <color name="light_red">#F9D3DB</color>
+    <color name="grey">#7D7A79</color>
+    <color name="light_grey">#A4A1A1</color>
+    <color name="shimmer_base_light">#E5E5E5</color>
+    <color name="shimmer_highlight_light">#FFF5F5F5</color>
+    <color name="border">#E4E4E4</color>
+    <color name="background">#F5F6F8</color>
+    <color name="empty_state">#9B9B9B</color>
+</resources>

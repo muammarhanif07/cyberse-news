@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- General size / space -->
+    <dimen name="tiny">4dp</dimen>
+    <dimen name="small">8dp</dimen>
+    <dimen name="medium">12dp</dimen>
+    <dimen name="standard">16dp</dimen>
+    <dimen name="large">24dp</dimen>
+    <dimen name="huge_1">32dp</dimen>
+    <!-- Text Size -->
+    <dimen name="large_text_1">16sp</dimen>
+    <dimen name="large_text_2">18sp</dimen>
+    <!-- Icon size -->
+    <dimen name="icon_large">64dp</dimen>
+    <!-- Image size -->
+    <dimen name="image_material">92dp</dimen>
+</resources>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.article.ArticleDetailSheet">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="cyberse.news.ui.main.MainViewModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/standard"
+        app:behavior_hideable="false"
+        app:layout_behavior="@string/bottom_sheet_behavior">
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="?actionBarSize"
+            android:layout_height="@dimen/tiny"
+            android:background="@drawable/rounded_rectangle"
+            android:backgroundTint="@android:color/darker_gray"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_author"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/large"
+            android:layout_marginHorizontal="@dimen/standard"
+            android:text="@{@string/article_by(viewModel.article.authorName)}"
+            android:textSize="@dimen/large_text_1"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/line"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tv_published_at"
+            tools:text="Author: Jeff"/>
+
+        <TextView
+            android:id="@+id/tv_published_at"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/standard"
+            android:text="@{viewModel.article.formattedPublishedAt}"
+            android:textColor="@color/red"
+            app:layout_constraintTop_toTopOf="@id/tv_author"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="12 October 2023"/>
+
+        <TextView
+            android:id="@+id/tv_article_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/standard"
+            android:text="@{viewModel.article.title}"
+            android:textSize="@dimen/large_text_2"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/tv_author"
+            tools:text="The Newest Google Pixel Buds Are Already 40% Off"/>
+
+        <TextView
+            android:id="@+id/tv_article_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/standard"
+            android:text="@{viewModel.article.description}"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/tv_article_title"
+            tools:text="Not every Amazon Prime Day deal is actually a deal, but some of them are legit. Like this one: Google’s Pixel Buds A-Series, which were released earlier this year, are currently $59—40% off the regular price of $99, matching their lowest price ever, according…"/>
+
+        <Button
+            style="@style/Theme.CyberseNews.Button"
+            android:id="@+id/btn_full_article"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/large"
+            android:layout_marginHorizontal="@dimen/standard"
+            android:text="@string/see_full_article"
+            android:textColor="@color/white"
+            android:textAllCaps="true"
+            android:onClick="@{() -> viewModel.onClickOpenWebView()}"
+            app:layout_constraintTop_toBottomOf="@id/tv_article_description"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

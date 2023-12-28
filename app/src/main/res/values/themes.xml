@@ -1,0 +1,71 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Base.Theme.CyberseNews" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/red</item>
+        <item name="colorPrimaryVariant">@color/light_red</item>
+        <item name="colorOnPrimary">@color/light_red</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/grey</item>
+        <item name="colorSecondaryVariant">@color/light_grey</item>
+        <item name="colorOnSecondary">@color/red</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/red</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:textColorSecondary">@color/white</item>
+    </style>
+
+    <style name="Theme.CyberseNews" parent="Base.Theme.CyberseNews"/>
+
+    <!-- App Bar -->
+    <style name="Theme.CyberseNews.AppBarOverlay" parent="ThemeOverlay.AppCompat.Light">
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorControlHighlight">@android:color/darker_gray</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="elevation">0dp</item>
+    </style>
+
+    <!-- Dialog -->
+    <style name="Theme.CyberseNews.Loading.Dialog" parent="android:Theme.Holo.Dialog.NoActionBar">
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowAnimationStyle">@style/Animation.WindowFadeInOut</item>
+    </style>
+
+    <style name="Animation.WindowFadeInOut" parent="android:style/Animation.Activity">
+        <item name="android:windowEnterAnimation">@anim/fade_in</item>
+        <item name="android:windowExitAnimation">@anim/fade_out</item>
+    </style>
+
+    <!-- Veil Layout -->
+
+    <style name="VeilRecyclerView">
+        <item name="veilFrame_radius">10dp</item>
+        <item name="veilFrame_isItemWrapContentHeight">true</item>
+        <item name="veilFrame_baseColor">@color/shimmer_base_light</item>
+        <item name="veilFrame_highlightColor">@color/shimmer_highlight_light</item>
+    </style>
+
+    <!-- Button -->
+    <style name="Theme.CyberseNews.Button" parent="Widget.MaterialComponents.Button">
+        <item name="cornerRadius">@dimen/large</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:backgroundTint">@color/red</item>
+    </style>
+
+    <!-- Sheet -->
+    <style name="Theme.CyberseNews.SheetTheme" parent="Theme.MaterialComponents.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/Theme.CyberseNews.SheetStyle</item>
+    </style>
+
+    <style name="Theme.CyberseNews.SheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="colorPrimary">@color/red</item>
+        <item name="colorPrimaryVariant">@color/light_red</item>
+        <item name="colorAccent">@color/black</item>
+        <item name="android:background">@drawable/bg_sheet_dialog</item>
+    </style>
+    
+</resources>

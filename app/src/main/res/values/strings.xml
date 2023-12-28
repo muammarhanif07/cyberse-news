@@ -1,0 +1,25 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Cyberse News</string>
+    <string name="error_no_internet">Slow or no internet connection, please check your internet settings</string>
+    <string name="error_internal_server">Internal server error, please try again</string>
+    <string name="retry">Retry</string>
+    <string name="home">Home</string>
+    <string name="profile">Profile</string>
+    <string name="apple_caption">All articles mentioning Apple from yesterday</string>
+    <string name="tesla_caption">All articles about Tesla from the last month</string>
+    <string name="business_caption">Top business headlines in the US right now</string>
+    <string name="tech_crunch_caption">Top headlines from TechCrunch right now</string>
+    <string name="wall_street_journal_caption">All articles published by the Wall Street Journal in the last 6 months</string>
+    <string name="back">Back</string>
+    <string name="source_list">Source List</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="phone" tools:ignore="TypographyDashes">+62 822-6272-6786</string>
+    <string name="email_value">thecyberseguy@gmail.com</string>
+    <string name="muammar_hanif">Muammar Hanif</string>
+    <string name="article_by">Author: %1$s</string>
+    <string name="see_full_article">See Full Article</string>
+    <string name="search_source">Search source…</string>
+    <string name="empty_source_list">No source list to show</string>
+</resources>

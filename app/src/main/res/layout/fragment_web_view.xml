@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.WebViewFragment">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="cyberse.news.ui.main.MainViewModel"/>
+
+        <variable
+            name="loadingProgress"
+            type="Integer"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/ib_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="?attr/actionBarSize"
+                    android:padding="@dimen/standard"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/back"
+                    android:onClick="@{() -> viewModel.onClickGoBack()}"
+                    app:srcCompat="@drawable/ic_arrow_back"
+                    app:tint="@color/white"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/small"
+                    android:layout_marginEnd="@dimen/standard"
+                    android:maxLines="2"
+                    android:text="@string/app_name"
+                    android:textSize="@dimen/large_text_2"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:ellipsize="end"
+                    app:layout_constraintTop_toTopOf="@id/ib_back"
+                    app:layout_constraintBottom_toBottomOf="@id/ib_back"
+                    app:layout_constraintStart_toEndOf="@id/ib_back"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <ProgressBar
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:id="@+id/progress_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/small"
+                    android:progressTint="@color/light_red"
+                    android:progress="@{loadingProgress}"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <WebView
+            android:id="@+id/web_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+</layout>

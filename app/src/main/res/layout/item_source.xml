@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="item"
+            type="cyberse.news.models.Article"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/empty_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/standard"
+            android:visibility="gone"/>
+
+        <com.google.android.material.card.MaterialCardView
+            style="?attr/materialCardViewElevatedStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/standard"
+            android:layout_marginHorizontal="@dimen/standard"
+            app:cardCornerRadius="@dimen/small">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/source"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/standard"
+                android:background="@color/background">
+
+                <TextView
+                    android:id="@+id/tv_source_id"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/standard"
+                    android:text="@{item.source.name}"
+                    android:textSize="@dimen/large_text_1"
+                    android:textColor="@color/black"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/tv_published_at"
+                    tools:text="Source ID"/>
+
+                <TextView
+                    android:id="@+id/tv_published_at"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{item.formattedPublishedAt}"
+                    android:textColor="@color/red"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="12 October 2023"/>
+
+                <TextView
+                    android:id="@+id/tv_source_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/small"
+                    android:text="@{item.title}"
+                    app:layout_constraintTop_toBottomOf="@id/tv_source_id"
+                    tools:text="The Newest Google Pixel Buds Are Already 40% Off"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+</layout>

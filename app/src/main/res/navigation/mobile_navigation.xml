@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="cyberse.news.ui.home.HomeFragment"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/navigate_to_source_fragment"
+            app:destination="@+id/navigation_source"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="cyberse.news.ui.profile.ProfileFragment"
+        tools:layout="@layout/fragment_profile"/>
+
+    <fragment
+        android:id="@+id/navigation_source"
+        android:name="cyberse.news.ui.sources.SourceFragment"
+        tools:layout="@layout/fragment_source">
+
+        <argument
+            android:name="selectedCategory"
+            app:argType="string"/>
+
+        <action
+            android:id="@+id/navigate_to_article_detail_sheet"
+            app:destination="@+id/navigation_article_detail_sheet"/>
+
+    </fragment>
+
+    <dialog
+        android:id="@+id/navigation_article_detail_sheet"
+        android:name="cyberse.news.ui.article.ArticleDetailSheet"
+        tools:layout="@layout/sheet_article_detail">
+
+        <argument
+            android:name="article"
+            app:argType="cyberse.news.models.Article"/>
+
+        <action
+            android:id="@+id/navigate_to_web_view"
+            app:destination="@id/navigation_web_view"/>
+
+    </dialog>
+
+    <fragment
+        android:id="@+id/navigation_web_view"
+        android:name="cyberse.news.ui.WebViewFragment"
+        tools:layout="@layout/fragment_web_view">
+
+        <argument
+            android:name="url"
+            app:argType="string"/>
+
+    </fragment>
+
+</navigation>
